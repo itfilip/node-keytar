@@ -1,4 +1,4 @@
-# keytar - Node module to manage system keychain
+# keytar-sync - Node module to manage system keychain
 
 [![Travis Build Status](https://travis-ci.org/atom/node-keytar.svg?branch=master)](https://travis-ci.org/atom/node-keytar)
 [![Windows Build Status](https://ci.appveyor.com/api/projects/status/github/atom/node-keytar?svg=true)](https://ci.appveyor.com/project/Atom/node-keytar)
