@@ -1,18 +1,18 @@
 {
   "main": "./lib/keytar.js",
   "typings": "keytar.d.ts",
-  "name": "keytar",
+  "name": "keytar-sync",
   "description": "Bindings to native Mac/Linux/Windows password APIs",
-  "version": "7.7.0",
+  "version": "7.7.1",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/atom/node-keytar.git"
+    "url": "https://github.com/itfilip/node-keytar.git"
   },
   "bugs": {
-    "url": "https://github.com/atom/node-keytar/issues"
+    "url": "https://github.com/itfilip/node-keytar/issues"
   },
-  "homepage": "http://atom.github.io/node-keytar",
+  "homepage": "https://github.com/itfilip/node-keytar",
   "keywords": [
     "keychain",
     "password",

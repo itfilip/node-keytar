@@ -6,10 +6,12 @@
 
 A native Node module to get, add, replace, and delete passwords in system's keychain. On macOS the passwords are managed by the Keychain, on Linux they are managed by the Secret Service API/libsecret, and on Windows they are managed by Credential Vault.
 
+This project is a merge between keytar@7.7.0 and keytar-extra@4.12.0 as a solution for having an updated sync version of node-keytar.
+
 ## Installing
 
 ```sh
-npm install keytar
+npm install keytar-sync
 ```
 
 ### On Linux
@@ -39,12 +41,25 @@ Each release of `keytar` includes prebuilt binaries for the versions of Node and
 ## Docs
 
 ```javascript
-const keytar = require('keytar')
+const keytar = require('keytar-sync')
 ```
+### Differences in Behavior
 
-Every function in keytar is asynchronous and returns a promise. The promise will be rejected with any error that occurs or will be resolved with the function's "yields" value.
+- The asynchronous functions in Keytar return Promises, which resolve with data upon successful completion and reject with an error if one occurs.
+
+- The synchronous functions in Keytar return plain values, and throw errors when they encounter issues.
 
 ### getPassword(service, account)
+
+Get the stored password for the `service` and `account`.
+
+`service` - The string service name.
+
+`account` - The string account name.
+
+Yields the string password or `null` if an entry for the given service and account was not found.
+
+### getPasswordSync(service, account)
 
 Get the stored password for the `service` and `account`.
 
@@ -66,6 +81,18 @@ Save the `password` for the `service` and `account` to the keychain. Adds a new 
 
 Yields nothing.
 
+### setPasswordSync(service, account, password)
+
+Save the `password` for the `service` and `account` to the keychain. Adds a new entry if necessary, or updates an existing entry if one exists.
+
+`service` - The string service name.
+
+`account` - The string account name.
+
+`password` - The string password.
+
+Returns nothing.
+
 ### deletePassword(service, account)
 
 Delete the stored password for the `service` and `account`.
@@ -76,6 +103,16 @@ Delete the stored password for the `service` and `account`.
 
 Yields `true` if a password was deleted, or `false` if an entry with the given service and account was not found.
 
+### deletePasswordSync(service, account)
+
+Delete the stored password for the `service` and `account`.
+
+`service` - The string service name.
+
+`account` - The string account name.
+
+Returns `true` if a password was deleted, or `false` if an entry with the given service and account was not found.
+
 ### findCredentials(service)
 
 Find all accounts and password for the `service` in the keychain.
@@ -83,6 +120,14 @@ Find all accounts and password for the `service` in the keychain.
 `service` - The string service name.
 
 Yields an array of `{ account: 'foo', password: 'bar' }`.
+
+### findCredentialsSync(service)
+
+Find all accounts and password for the `service` in the keychain.
+
+`service` - The string service name.
+
+Returns an array of `{ account: 'foo', password: 'bar' }`.
 
 ### findPassword(service)
 
@@ -92,3 +137,10 @@ Find a password for the `service` in the keychain. This is ideal for scenarios w
 
 Yields the string password, or `null` if an entry for the given service was not found.
 
+### findPasswordSync(service)
+
+Find a password for the `service` in the keychain. This is ideal for scenarios where an `account` is not required.
+
+`service` - The string service name.
+
+Returns the string password, or `null` if an entry for the given service was not found.

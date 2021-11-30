@@ -1,6 +1,7 @@
 /node_modules
 /prebuilds
 /build
+/bin
 *.log
 *~
 .tags
@@ -8,3 +9,4 @@ iojs-*/
 8.*/
 6.*/
 .idea/
+
