@@ -3,7 +3,7 @@
   "typings": "keytar.d.ts",
   "name": "keytar-sync",
   "description": "Bindings to native Mac/Linux/Windows password APIs",
-  "version": "7.7.1",
+  "version": "7.9.1",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -38,20 +38,21 @@
     "prebuild-napi-x64": "prebuild -t 3 -r napi -a x64 --strip",
     "prebuild-napi-ia32": "prebuild -t 3 -r napi -a ia32 --strip",
     "prebuild-napi-arm64": "prebuild -t 3 -r napi -a arm64 --strip",
+    "prebuild-napi-armv7l": "prebuild -t 3 -r napi -a armv7l --strip",
     "upload": "node ./script/upload.js"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "chai": "^4.2.0",
-    "mocha": "^8.0.1",
+    "mocha": "^9.2.0",
     "node-cpplint": "~0.4.0",
-    "node-gyp": "^7.0.0",
-    "prebuild": "^10.0.1"
+    "node-gyp": "^8.4.1",
+    "prebuild": "^11.0.2"
   },
   "dependencies": {
-    "node-addon-api": "^3.0.0",
-    "prebuild-install": "^6.0.0"
+    "node-addon-api": "^4.3.0",
+    "prebuild-install": "^7.1.1"
   },
   "binary": {
     "napi_versions": [

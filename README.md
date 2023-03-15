@@ -6,7 +6,7 @@
 
 A native Node module to get, add, replace, and delete passwords in system's keychain. On macOS the passwords are managed by the Keychain, on Linux they are managed by the Secret Service API/libsecret, and on Windows they are managed by Credential Vault.
 
-This project is a merge between keytar@7.7.0 and keytar-extra@4.12.0 as a solution for having an updated sync version of node-keytar.
+This project is a merge between keytar@7.9.0 and keytar-extra@4.12.0 as a solution for having an updated sync version of node-keytar.
 
 ## Installing
 
